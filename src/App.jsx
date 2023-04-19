@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Card, CardMedia, Button } from "@mui/material";
+import { Grid, Card, CardMedia, Button, Typography } from "@mui/material";
 
 const PaginaPerros = () => {
   const [imagenPerro, setImagenPerro] = useState("");
@@ -19,6 +19,8 @@ const PaginaPerros = () => {
       .then((datos) => setImagenPerro(datos.message));
   };
 
+  
+
   const rechazarPerro = () => {
     setPerrosRechazados([...perrosRechazados, imagenPerro]);
     fetch("https://dog.ceo/api/breeds/image/random")
@@ -29,6 +31,7 @@ const PaginaPerros = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={4}>
+        <Typography align="left" variant="h2">Rechazados</Typography>
         {/* Columna de perros rechazados */}
         {perrosRechazados.map((perro) => (
           <Card key={perro} sx={{ maxWidth: 400, borderRadius: 3 }}>
@@ -37,6 +40,7 @@ const PaginaPerros = () => {
         ))}
       </Grid>
       <Grid item xs={4}>
+        <Typography align="left" variant="h2">Candidatos</Typography>
         {/* Columna de perros candidatos */}
         <Card sx={{ maxWidth: 400, borderRadius: 3 }}>
           <CardMedia component="img" image={imagenPerro} alt="Perro" />
@@ -55,6 +59,7 @@ const PaginaPerros = () => {
         </Grid>
       </Grid>
       <Grid item xs={4}>
+        <Typography align="left" variant="h2">Aceptados</Typography>
         {/* Columna de perros aceptados */}
         {perrosAceptados.map((perro) => (
           <Card key={perro} sx={{ maxWidth: 400, borderRadius: 3 }}>
