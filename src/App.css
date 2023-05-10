@@ -18,6 +18,20 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+
+::-webkit-scrollbar {
+  width: 3px; /* Ancho de la scrollbar */
+  height: 2px; /* Altura de la scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color de la pista de la scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color del pulgar de la scrollbar */
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
